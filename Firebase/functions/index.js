@@ -44,8 +44,8 @@ exports.getDailyData = functions.https.onRequest(async (request, response) => {
     const dailyData = {};
     querySnapshot.forEach((doc) => {
       const data = doc.data();
-      const date = data.date; // 날짜 필드 이름에 맞게 수정
-      const value = data.value; // 데이터 필드 이름에 맞게 수정
+      const date = data.date;
+      const value = data.value;
       if (!dailyData[date]) {
         dailyData[date] = 0;
       }
@@ -79,7 +79,7 @@ functions.https.onRequest(async (request, response) => {
     let numDays = 0;
     querySnapshot.forEach((doc) => {
       const data = doc.data();
-      const value = data.value; // 데이터 필드 이름에 맞게 수정
+      const value = data.value;
       totalUsage += value;
       numDays++;
     });
